@@ -5,16 +5,16 @@ Vulnerable application that implements the following vulnerabilities: XSS, IDOR,
 
 requirements.txt
 
-### Proof of Concept
+# Proof of Concept
 
-# XSS
+### XSS
 
-# IDOR
+### IDOR
 
-# SQL Injection
+### SQL Injection
 
-# OS command injection
+### OS command injection
 
-# Path Traversal
+### Path Traversal
 
-# Brute Force
+### Brute Force
