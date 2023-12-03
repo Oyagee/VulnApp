@@ -1,12 +1,33 @@
-from flask import Flask, request
-import cgi
+from flask import Flask, request, render_template
+import sqlite3
+from markupsafe import escape
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
+# XSS
 @app.route("/")
 def index():
     name = request.args.get("name", "")
+    name=escape(name)
     return f"<h1>Hello, {name}!</h1>"
 
+#SQLI
+
+conn = sqlite3.connect('database.db', check_same_thread=False)
+cursor = conn.cursor()
+
+@app.route("/sqli/")
+def sqli():
+    username = request.args.get("username", "")
+    password = request.args.get("password", "")
+    query = f"SELECT * FROM users WHERE username='{username}' AND password='{password}'"
+    cursor.execute(query)
+    result = cursor.fetchone()
+    if result:
+        return "<h1>Login successful.</h1>"
+    else:
+        return "<h1>Deny</h1>"
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
+
