@@ -9,6 +9,12 @@ requirements.txt
 
 ### XSS
 
+#### PoC:
+1. В качестве параметров URL'а можно вводить значение переменной name 
+Пример: /?name=123
+2. Таким образом в качестве параметра можно вставить XSS Payload
+Пример: /?name="<script>alert(123)</script>"
+
 ### IDOR
 
 ### SQL Injection
