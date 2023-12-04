@@ -1,15 +1,15 @@
 # VulnApp
-Vulnerable application that implements the following vulnerabilities: XSS, IDOR, SQL Injection, OS command injection, Path Traversal, Brute Force
+Уязвимое приложение, которое включает в себя следующие уязвимости: XSS, IDOR, SQL Injection, OS command injection, Path Traversal, Brute Force
 
 ### Инструкция по сборке и запуску приложения
 
-requirements.txt
+1. pip install -r .\requirements.txt
+2. python main.py
 
 # Proof of Concept
 
 ### XSS
 
-##### PoC:
 1. В качестве параметров URL'а можно вводить значение переменной name 
 Пример: /?name=123
 2. Таким образом в качестве параметра можно вставить XSS Payload
@@ -17,13 +17,10 @@ requirements.txt
 
 ### IDOR
 
-##### PoC:
-
 Для эксплуатирования IDOR необходимо менять ID пользователя в ссылке http://127.0.0.1:5000/user/1 (создано только два пользователя с id 1 и 2)
 
 ### SQL Injection
 
-##### PoC:
 url: http://127.0.0.1:5000/sqli/?username=admin&password=pass
 url: http://127.0.0.1:5000/sqli/?username=admin&password=pass123
 url: http://127.0.0.1:5000/sqli/?username=admin'--
@@ -35,22 +32,16 @@ url: http://127.0.0.1:5000/sqli/?username=admin'--
 Для реализациия SQL Injection необходимо использовать, к примеру, конструкцию "'--", чтобы отбросить остальную часть SQL запроса
 Пример: http://127.0.0.1:5000/sqli/?username=admin%27--
 
-
-
-
 ### OS command injection
 
-##### PoC:
 Для эксплуатации данной уязвимости необходимо вводить в форму команды
 Например dir /b, которая выведет список файлов в текущей директории
 Либо можно с помощью направления информационного выхода записать его в файл: dir /b > file.txt
 А затем с помощью команды type file.txt посмотреть содержимое файла
 Таким образом можно смотреть содержимое всех файлов, например type main.py
 
-
 ### Path Traversal
 
-##### PoC:
 url: http://127.0.0.1:5000/pathtraversal/
 Для эксплуатация Path Traversal требуется в input ввести название файла, по дефолту обращение происходит в папку Uploads, в котором лежат файлы
 Можно попробовать открывать следующее: test.py/test.txt
@@ -63,7 +54,6 @@ url: http://127.0.0.1:5000/pathtraversal/
 
 ### Brute Force
 
-##### PoC:
 url: http://127.0.0.1:5000/sqli/
 
 Для брутфорса можно использовать утилиту ffuf
