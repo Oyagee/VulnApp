@@ -65,6 +65,7 @@ url: http://127.0.0.1:5000/sqli/
 ffuf -u "http://127.0.0.1:5000/sqli/?username=admin&password=FUZZ" -w C:\Users\USERNAME\Desktop\ffuf\passwords.txt -t 201
 ```
 Таким образом в поле password будут подставляться пароли из password.txt
+
 password.txt находится в папке с проектом
 
 
