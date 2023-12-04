@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, redirect
 import sqlite3
 from markupsafe import escape
 import os
+import subprocess
 
 
 app = Flask(__name__, template_folder='templates')
@@ -90,6 +91,18 @@ def login():
         return "<h1>Login successful.</h1>"
     else:
         return "<h1>Deny.</h1>"
+
+
+### OS command injection
+
+@app.route('/osci')
+def osci():
+    return render_template('osci.html')
+
+@app.route('/execute', methods=['POST'])
+def execute():
+    command = request.form.get('command')
+    return subprocess.check_output(command, shell=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
