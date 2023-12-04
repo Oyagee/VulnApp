@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template, redirect
 import sqlite3
 from markupsafe import escape
+import os
+
 
 app = Flask(__name__, template_folder='templates')
 
@@ -50,6 +52,25 @@ def user_profile(user_id):
         if user['id'] == user_id:
             return render_template('profile.html', user=user)
     return redirect('/')
+
+#### Path Traversal
+
+@app.route('/pathtraversal/')
+def pathtraversal():
+    return render_template('pathtraversal.html')
+
+
+@app.route('/read_file', methods=['POST'])
+def read_file():
+    filename = request.form.get('filename')
+    filepath = os.path.join('uploads', filename)
+
+    try:
+        with open(filepath, 'r') as file:
+            content = file.read()
+            return content
+    except Exception as e:
+        return str(e)
 
 
 if __name__ == "__main__":
