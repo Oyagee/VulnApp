@@ -24,12 +24,15 @@ requirements.txt
 ### SQL Injection
 
 ##### PoC:
+url: http://127.0.0.1:5000/sqli/?username=admin&password=pass
+url: http://127.0.0.1:5000/sqli/?username=admin&password=pass123
+url: http://127.0.0.1:5000/sqli/?username=admin'--
 
 В database хранятся креды учетки админа admin/pass
 Если попробовать войти по ним, то успешно войдет
 Если изменить пароль или логин, то доступ будет запрещен
 
-Для реализациия SQL Injection необходимо использовать, к примеру, "'--", чтобы отбросить остальную часть SQL запроса
+Для реализациия SQL Injection необходимо использовать, к примеру, конструкцию "'--", чтобы отбросить остальную часть SQL запроса
 Пример: http://127.0.0.1:5000/sqli/?username=admin%27--
 
 
@@ -40,9 +43,11 @@ requirements.txt
 ### Path Traversal
 
 ##### PoC:
+url: http://127.0.0.1:5000/pathtraversal/
 Для эксплуатация Path Traversal требуется в input ввести название файла, по дефолту обращение происходит в папку Uploads, в котором лежат файлы
 Можно попробовать открывать следующее: test.py/test.txt
 Чтобы открывать файлы находящиеся в корневой директории(/), необходимо использовать следующий синтаксис:
+
 Пример: ../main.py 
 
 ![image](https://github.com/Oyagee/VulnApp/assets/73120241/2a7766c7-c619-4a93-895b-538a2ae067d9)
