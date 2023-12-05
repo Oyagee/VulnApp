@@ -91,6 +91,8 @@ ffuf -u "http://127.0.0.1:5000/sqli/?username=admin&password=FUZZ" -w C:\Users\U
 ```
 Таким образом в поле password будут подставляться пароли из password.txt
 
+![image](https://github.com/Oyagee/VulnApp/assets/73120241/448de31b-045e-4394-b3e7-4c205acc44e3)
+
 password.txt находится в папке с проектом
 
 
