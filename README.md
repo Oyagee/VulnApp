@@ -61,7 +61,9 @@ url: http://127.0.0.1:5000/sqli/?username=admin'--
 ![image](https://github.com/Oyagee/VulnApp/assets/73120241/6f6725df-7745-45a8-af75-08e374569c54)
 
 Либо можно с помощью направления информационного выхода записать его в файл: dir /b > file.txt
+
 А затем с помощью команды type file.txt посмотреть содержимое файла
+
 Таким образом можно смотреть содержимое всех файлов, например type main.py
 
 ### Path Traversal
