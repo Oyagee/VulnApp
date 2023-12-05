@@ -42,10 +42,16 @@ url: http://127.0.0.1:5000/sqli/?username=admin'--
 
 Если попробовать войти по ним, то успешно войдет
 
+![image](https://github.com/Oyagee/VulnApp/assets/73120241/3e564c0a-6c00-42db-be39-3f63276e33a7)
+
 Если изменить пароль или логин, то доступ будет запрещен
+
+![image](https://github.com/Oyagee/VulnApp/assets/73120241/919f3ee7-36f2-42ad-bdd7-839c7b405f14)
 
 Для реализациия SQL Injection необходимо использовать, к примеру, конструкцию "'--", чтобы отбросить остальную часть SQL запроса
 Пример: http://127.0.0.1:5000/sqli/?username=admin%27--
+
+![image](https://github.com/Oyagee/VulnApp/assets/73120241/280e4ec7-23a1-4735-ac37-64bca80660c8)
 
 ### OS command injection
 
