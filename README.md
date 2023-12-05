@@ -12,8 +12,14 @@
 
 1. В качестве параметров URL'а можно вводить значение переменной name 
 Пример: /?name=123
+
+![image](https://github.com/Oyagee/VulnApp/assets/73120241/05ee5afa-b226-49d1-864c-fe61a24c0a6d)
+
 2. Таким образом в качестве параметра можно вставить XSS Payload
 Пример: /?name="<script>alert(123)</script>"
+
+![image](https://github.com/Oyagee/VulnApp/assets/73120241/0e9ba0c1-66a8-4db0-b209-a2556a06cbf8)
+
 
 ### IDOR
 
