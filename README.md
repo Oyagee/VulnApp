@@ -22,6 +22,7 @@
 
 ![image](https://github.com/Oyagee/VulnApp/assets/73120241/0e9ba0c1-66a8-4db0-b209-a2556a06cbf8)
 
+---
 
 ### IDOR
 
@@ -31,6 +32,7 @@
 
 ![image](https://github.com/Oyagee/VulnApp/assets/73120241/ed70b0e7-7dde-4172-a149-f95848ee8582)
 
+---
 
 ### SQL Injection
 
@@ -55,6 +57,8 @@ url: http://127.0.0.1:5000/sqli/?username=admin'--
 
 ![image](https://github.com/Oyagee/VulnApp/assets/73120241/280e4ec7-23a1-4735-ac37-64bca80660c8)
 
+---
+
 ### OS command injection
 
 Для эксплуатации данной уязвимости необходимо вводить в форму команды
@@ -68,6 +72,8 @@ url: http://127.0.0.1:5000/sqli/?username=admin'--
 
 Таким образом можно смотреть содержимое всех файлов, например type main.py
 
+---
+
 ### Path Traversal
 
 url: http://127.0.0.1:5000/pathtraversal/
@@ -80,6 +86,7 @@ url: http://127.0.0.1:5000/pathtraversal/
 
 ![image](https://github.com/Oyagee/VulnApp/assets/73120241/2a7766c7-c619-4a93-895b-538a2ae067d9)
 
+---
 
 ### Brute Force
 
