@@ -27,6 +27,7 @@
 
 Для эксплуатирования IDOR необходимо менять ID пользователя в ссылке http://127.0.0.1:5000/user/1 (создано только два пользователя с id 1 и 2)
 
+![image](https://github.com/Oyagee/VulnApp/assets/73120241/ed70b0e7-7dde-4172-a149-f95848ee8582)
 
 
 ### SQL Injection
