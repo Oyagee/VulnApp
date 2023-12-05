@@ -33,7 +33,9 @@
 ### SQL Injection
 
 url: http://127.0.0.1:5000/sqli/?username=admin&password=pass
+
 url: http://127.0.0.1:5000/sqli/?username=admin&password=pass123
+
 url: http://127.0.0.1:5000/sqli/?username=admin'--
 
 В database хранятся креды учетки админа admin/pass
