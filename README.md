@@ -1,3 +1,4 @@
+example
 # VulnApp
 Уязвимое приложение, которое включает в себя следующие уязвимости: XSS, IDOR, SQL Injection, OS command injection, Path Traversal, Brute Force
 
